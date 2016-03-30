@@ -6,7 +6,7 @@
 /*   By: apellicc <apellicc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/03/24 00:50:45 by apellicc          #+#    #+#             */
-/*   Updated: 2016/03/30 14:06:18 by apellicc         ###   ########.fr       */
+/*   Updated: 2016/03/30 15:14:31 by apellicc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,15 +49,15 @@ void	ft_alloc(int fd, t_en *e)
 	{
 		tmp2 = ft_strsplit(tmp, ' ');
 		free(tmp);
-		e->m[y] = (int *)malloc(sizeof(int) * e->len_line);
-		i = 0;
-		x = 0;
-		while (i < e->len_line)
+		if (!(e->m[y] = (int *)malloc(sizeof(int) * e->len_line)))
 		{
-			e->m[y][x] = ft_atoi(tmp2[i]);
-			i++;
-			x++;
+			ft_putendl("error");
+			exit(0);
 		}
+		i = -1;
+		x = -1;
+		while (++i < e->len_line)
+			e->m[y][++x] = ft_atoi(tmp2[i]);
 		y++;
 		ft_tabfree(tmp2);
 	}
@@ -75,7 +75,11 @@ int		ft_parse(char *file, t_en *e)
 		exit(0);
 	}
 	close(fd);
-	e->m = (int **)malloc(sizeof(int *) * e->line);
+	if (!(e->m = (int **)malloc(sizeof(int *) * e->line)))
+	{
+		ft_putendl("error");
+		exit(0);
+	}
 	fd = open(file, O_RDONLY);
 	ft_alloc(fd, e);
 	return (0);

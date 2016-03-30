@@ -6,12 +6,11 @@
 /*   By: apellicc <apellicc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/03/27 18:18:46 by apellicc          #+#    #+#             */
-/*   Updated: 2016/03/30 13:33:00 by apellicc         ###   ########.fr       */
+/*   Updated: 2016/03/30 15:16:06 by apellicc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "fdf.h"
-
 
 void	get_data(t_en *e, t_im *img, int y, int x)
 {

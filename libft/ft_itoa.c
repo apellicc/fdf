@@ -6,7 +6,7 @@
 /*   By: apellicc <apellicc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/12/02 16:06:31 by apellicc          #+#    #+#             */
-/*   Updated: 2015/12/17 17:03:34 by apellicc         ###   ########.fr       */
+/*   Updated: 2016/03/30 15:11:25 by apellicc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,8 +20,7 @@ char			*ft_itoa(int n)
 
 	neg = 1;
 	size = ft_intlen(n);
-	str = malloc(sizeof(str) * size + 1);
-	if (str == NULL)
+	if (!(str = malloc(sizeof(str) * size + 1)))
 		return (NULL);
 	str[0] = '0';
 	str[size] = '\0';

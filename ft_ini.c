@@ -6,7 +6,7 @@
 /*   By: apellicc <apellicc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/03/29 16:02:13 by apellicc          #+#    #+#             */
-/*   Updated: 2016/03/30 12:04:12 by apellicc         ###   ########.fr       */
+/*   Updated: 2016/03/30 19:26:00 by apellicc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,7 @@ void	ft_ini(t_en *e)
 	e->z = 3;
 	endi = 0;
 	e->c_r = 215;
+	e->pr = 1;
 	if (!(e->mlx = mlx_init()))
 		exit(0);
 	e->img_iso = (t_im *)ft_memnew(sizeof(t_im));

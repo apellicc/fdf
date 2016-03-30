@@ -6,7 +6,7 @@
 /*   By: apellicc <apellicc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/03/23 02:31:51 by apellicc          #+#    #+#             */
-/*   Updated: 2016/03/30 15:15:27 by apellicc         ###   ########.fr       */
+/*   Updated: 2016/03/30 19:10:13 by apellicc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,6 +47,7 @@ typedef struct		s_en
 	int				c_r;
 	int				c_g;
 	int				c_b;
+	int				pr;
 }					t_en;
 
 typedef struct		s_p

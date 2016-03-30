@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_draw_iso.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: apellicc <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: apellicc <apellicc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/03/30 12:32:29 by apellicc          #+#    #+#             */
-/*   Updated: 2016/03/30 12:32:32 by apellicc         ###   ########.fr       */
+/*   Updated: 2016/03/30 19:37:22 by apellicc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,13 +33,13 @@ void	draw_iso2(t_en *e, int y, int x)
 
 	p1.x = (0 - ((e->len_line - x) * 5) + ((e->line - y) * 5)) *
 	(9.0 / e->z) - e->mx;
-	p1.y = (0 - (e->m[y][x]) - (((e->len_line - x) + (e->line - y)) * 3)) *
-	(9.0 / e->z) - e->my;
+	p1.y = (0 - (e->m[y][x] * (-e->pr)) - (((e->len_line - x) +
+	(e->line - y)) * 3)) * (9.0 / e->z) - e->my;
 	if (x < (e->len_line - 1))
 	{
 		p2.x = (0 - ((e->len_line - (x + 1)) * 5) + ((e->line - y) * 5)) *
 		(9.0 / e->z) - e->mx;
-		p2.y = (0 - (e->m[y][x + 1]) - (((e->len_line - (x + 1)) +
+		p2.y = (0 - (e->m[y][x + 1] *  (-e->pr)) - (((e->len_line - (x + 1)) +
 		(e->line - y)) * 3)) * (9.0 / e->z) - e->my;
 		draw_line(e, e->img_iso, p2, p1);
 	}
@@ -47,7 +47,7 @@ void	draw_iso2(t_en *e, int y, int x)
 	{
 		p2.x = (0 - ((e->len_line - x) * 5) + ((e->line - (y + 1)) * 5)) *
 		(9.0 / e->z) - e->mx;
-		p2.y = (0 - (e->m[y + 1][x]) - (((e->len_line - x) +
+		p2.y = (0 - (e->m[y + 1][x] * (-e->pr)) - (((e->len_line - x) +
 		(e->line - (y + 1))) * 3)) * (9.0 / e->z) - e->my;
 		draw_line(e, e->img_iso, p2, p1);
 	}

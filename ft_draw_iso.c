@@ -6,7 +6,7 @@
 /*   By: apellicc <apellicc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/03/30 12:32:29 by apellicc          #+#    #+#             */
-/*   Updated: 2016/03/30 19:37:22 by apellicc         ###   ########.fr       */
+/*   Updated: 2016/03/30 22:09:39 by apellicc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,7 @@ void	draw_iso2(t_en *e, int y, int x)
 	{
 		p2.x = (0 - ((e->len_line - (x + 1)) * 5) + ((e->line - y) * 5)) *
 		(9.0 / e->z) - e->mx;
-		p2.y = (0 - (e->m[y][x + 1] *  (-e->pr)) - (((e->len_line - (x + 1)) +
+		p2.y = (0 - (e->m[y][x + 1] * (-e->pr)) - (((e->len_line - (x + 1)) +
 		(e->line - y)) * 3)) * (9.0 / e->z) - e->my;
 		draw_line(e, e->img_iso, p2, p1);
 	}

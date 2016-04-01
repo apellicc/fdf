@@ -6,7 +6,7 @@
 /*   By: apellicc <apellicc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/03/27 18:18:46 by apellicc          #+#    #+#             */
-/*   Updated: 2016/03/30 15:16:06 by apellicc         ###   ########.fr       */
+/*   Updated: 2016/04/01 16:49:42 by apellicc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ void	get_data(t_en *e, t_im *img, int y, int x)
 		img->data[(img->bpl * y) + (4 * x) + 1] = e->c_g;
 		img->data[(img->bpl * y) + (4 * x)] = e->c_b;
 	}
-	if (x < S_P_W && y >= 0 && (y < S_P_H) && x >= 0 && e->c == 1)
+	if (y < S_I_H && y >= 0 && (x < S_I_W) && x >= 0 && e->c == 1)
 	{
 		img->data[(img->bpl * y) + (4 * x) + 2] = 255 - e->c_r;
 		img->data[(img->bpl * y) + (4 * x) + 1] = 255 - e->c_g;

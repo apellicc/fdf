@@ -6,7 +6,7 @@
 /*   By: apellicc <apellicc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/03/23 02:10:58 by apellicc          #+#    #+#             */
-/*   Updated: 2016/03/30 19:18:48 by apellicc         ###   ########.fr       */
+/*   Updated: 2016/04/01 23:14:03 by apellicc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ int		main(int argc, char **argv)
 	ft_ini(&e);
 	ft_parse(argv[1], &e);
 	draw(&e);
-	mlx_put_image_to_window(e.mlx, e.win_para, e.img_para, 0, 0);
+//	mlx_put_image_to_window(e.mlx, e.win_para, e.img_para, 0, 0);
 	mlx_hook(e.win_para, 2, 3, key, &e);
 	mlx_hook(e.win_iso, 2, 3, key, &e);
 	mlx_loop_hook(e.mlx, (void *)draw, &e);
